@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        ENV = 'stage'
+        ENV = 'prod'
         //changes
     }
     agent any
@@ -25,11 +25,11 @@ pipeline {
 
         stage('Integration Tests'){
             steps {
-                // echo '... Passed 23/23 tests ...'
-                // echo '... Moving to next section ...'
+                echo '... Passed 23/23 tests ...'
+                echo '... Moving to next section ...'
 
-                echo '... Passed 21/23 tests ...'
-                error('...Failed to pass integration tests ...')
+                // echo '... Passed 21/23 tests ...'
+                // error('...Failed to pass integration tests ...')
             }
         }
 
