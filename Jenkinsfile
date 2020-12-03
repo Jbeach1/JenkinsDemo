@@ -15,6 +15,7 @@ pipeline {
                 echo '... Requires 2 approvers ...'
             }
         }
+
         stage('Build'){
             steps {
                 echo '... Loading appropriate configurations ...'
@@ -24,11 +25,11 @@ pipeline {
 
         stage('Integration Tests'){
             steps {
-                echo '... Passed 23/23 tests ...'
-                echo '... Moving to next section ...'
+                // echo '... Passed 23/23 tests ...'
+                // echo '... Moving to next section ...'
 
-                // echo '... Passed 21/23 tests ...'
-                // error('...Failed to pass integration tests ...')
+                echo '... Passed 21/23 tests ...'
+                error('...Failed to pass integration tests ...')
             }
         }
 
