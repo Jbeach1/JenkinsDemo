@@ -2,29 +2,32 @@ pipeline {
     environment {
         env = 'test'
     }
-    agent { any }
-
     stages {
-        stage('Prepare Deployment Environment'){
+        stage('Build'){
             steps {
-                    echo 'loading appropriate configurations'
-                    //use some conditional logic here
+                echo '... Loading appropriate configurations ...'
+                echo '... Compiling some fun stuff ...'
+            }
+        }
+
+        stage('Integration Tests'){
+            steps {
+                echo '... Passed 23/23 tests ...'
+                echo '... Moving to next section ...'
             }
         }
 
         stage('Deploy code'){
             steps {
-                echo 'gathering needed files'
-                echo 'deploying code'
+                echo '... Deploying code to destination ...'
+                echo '... Transfer complete ...'
             }
         }
 
-        stage('Run tests'){
+        stage('Generate Artifacts'){
             steps{
-                echo 'running tests'
-                //if failed abort 
+                echo '... Uploading build artifacts to artifactory'
             }
-       
         }
 
         stage('Clean: ws'){
