@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        ENV = 'prod'
+        ENV = 'stage'
         //changes
     }
     agent any
