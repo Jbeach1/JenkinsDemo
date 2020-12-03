@@ -1,8 +1,9 @@
 pipeline {
     environment {
         env = 'prod'
-        //changes
+        
     }
+    agent any
     stages {
         stage('Build'){
             steps {
