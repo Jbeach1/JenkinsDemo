@@ -5,6 +5,16 @@ pipeline {
     }
     agent any
     stages {
+
+        stage('Approval'){
+            when {
+                expression { env == 'prod' }
+            }
+            steps {
+                echo '... Escalating approval ...'
+                echo '... Requires 2 approvers ...'
+            }
+        }
         stage('Build'){
             steps {
                 echo '... Loading appropriate configurations ...'
