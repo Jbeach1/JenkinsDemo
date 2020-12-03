@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        env = 'test'
+        env = 'prod'
     }
     stages {
         stage('Build'){
